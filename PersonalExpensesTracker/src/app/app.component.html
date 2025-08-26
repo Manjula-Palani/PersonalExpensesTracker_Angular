@@ -1,0 +1,25 @@
+<div class="min-h-screen overflow-hidden bg-gray-300">
+    <header class="bg-gray-500 text-white shadow sticky top-0 z-10">
+        <div class="max-w-6xl mx-auto px-4 py-3 flex justify-between items-center">
+            <a routerLink="/" class="font-semibold">Personal Expenses Tracker</a>
+            <nav class="flex items-center gap-3" *ngIf="auth.isLoggedIn(); else guest">                
+                <ng-container *ngIf="auth.currentUser()?.role==='user'">
+                    <a routerLink="/dashboard" class="hover:underline">Dashboard</a>
+                    <a routerLink="/transactions" class="hover:underline">Transactions</a>
+                    <a routerLink="/reports" class="hover:underline">Reports</a>
+                </ng-container>
+                <ng-container *ngIf="auth.currentUser()?.role==='admin'">
+                    <a routerLink="/dashboard/admin" class="hover:underline">Admin Dashboard</a>
+                    <a  routerLink="/users" class="hover:underline">Users</a>
+                </ng-container>
+                <button (click)="logout()" class="px-3 py-1 border rounded-xl">Logout</button>
+            </nav>
+            <ng-template #guest>
+                <a routerLink="/auth/login" class="px-3 py-1 border rounded-xl">Login</a>
+            </ng-template>
+        </div>
+    </header>
+    <main class="max-w-6xl mx-auto px-2 py-2">
+        <router-outlet></router-outlet>
+    </main>
+</div>

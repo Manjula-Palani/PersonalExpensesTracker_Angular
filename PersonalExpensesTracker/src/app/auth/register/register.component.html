@@ -1,0 +1,26 @@
+<div class="min-h-full mt-20  flex items-center justify-center">
+    <div class="w-full max-w-md p-8 rounded shadow bg-gray-400">
+        <h2 class="text-2xl mb-4">Create account</h2>
+        <form (ngSubmit)="submit()" [formGroup]="form">
+            <label class="block">Name
+            <input formControlName="name" class="w-full mt-1 p-2 border rounded" />
+            </label>
+            <label class="block mt-3">Email
+            <input formControlName="email" class="w-full mt-1 p-2 border rounded" />
+            </label>
+            <label class="block mt-3">Password
+            <input type="password" formControlName="password" class="w-full mt-1 p-2 border rounded" />
+            </label>
+            <label class="block mt-3">Role
+                <select class="w-full mt-1 p-2 border rounded" name="role" id="role" formControlName="role">
+                    <option *ngFor="let option of roleOption" [value]="option.key">
+                        {{option.label}}
+                    </option>
+                </select>                
+            </label>
+            <div *ngIf="error" class="text-red-500 mt-2">{{error}}</div>
+            <button class="mt-4 w-full py-2 rounded bg-green-600 textwhite">Register</button>
+        </form>
+        <p class="mt-3 text-sm">Already have an account? <a routerLink="/auth/login" class="text-blue-600">Login</a></p>
+    </div>
+</div>

@@ -1,0 +1,30 @@
+<div class="p-4 space-y-4">
+    <div class="flex justify-between items-center">
+        <h2 class="text-xl font-semibold">My Transactions</h2>
+        <a routerLink="/transactions/new" class="px-3 py-2 bg-black text-white rounded-xl">Add</a>
+    </div>
+    <div class="bg-white rounded-2xl shadow overflow-x-auto">
+        <table class="w-full text-sm">
+            <thead>
+                <tr class="border-b">
+                    <th class="p-2">Date</th><th class="p-2">Type</th>
+                    <th class="p-2">Category</th><th class="p-2">Notes</th>
+                    <th class="p-2 textright">Amount</th><th class="p-2 text-right">Actions</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr *ngFor="let t of list" class="border-b">
+                    <td class="p-2">{{t.date}}</td>
+                    <td class="p-2">{{t.type}}</td>
+                    <td class="p-2">{{t.category}}</td>
+                    <td class="p-2">{{t.note}}</td>
+                    <td class="p-2 text-right" [class.text-green-600]="t.type==='income'"[class.text-red-600]="t.type==='expense'">{{t.amount | number:'1.2-2'}}</td>
+                    <td class="p-2 text-right space-x-2">
+                    <a [routerLink]="['/transactions', t.id, 'edit']"class="underline">Edit</a>
+                    <button (click)="remove(t.id)" class="text-red-600">Delete</button>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</div>

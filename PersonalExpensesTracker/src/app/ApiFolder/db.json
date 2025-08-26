@@ -1,0 +1,106 @@
+{
+  "users": [
+    {
+      "name": "Manju",
+      "email": "admin@gmail.com",
+      "password": "12345",
+      "role": "admin",
+      "id": "a5db"
+    },
+    {
+      "id": "504c",
+      "name": "deva",
+      "email": "deva@gmail.com",
+      "password": "12345",
+      "role": "user"
+    },
+    {
+      "id": "b047",
+      "name": "Kathir",
+      "email": "kathir@gmail.com",
+      "password": "12345",
+      "role": "user"
+    },
+    {
+      "id": "512d",
+      "name": "Deva",
+      "email": "deva@gmail.com",
+      "password": "12345",
+      "role": "admin"
+    }
+  ],
+  "transactions": [
+    {
+      "id": "070c",
+      "userId": "b047",
+      "date": "2025-08-22",
+      "category": "salary",
+      "type": "income",
+      "amount": 50000,
+      "note": "aug"
+    },
+    {
+      "date": "2025-08-21",
+      "userId": "504c",
+      "category": "Debit interest",
+      "type": "income",
+      "amount": 78888,
+      "note": "interest",
+      "id": "11cd"
+    },
+    {
+      "date": "2025-08-21",
+      "userId": "b047",
+      "category": "shopping",
+      "type": "expense",
+      "amount": 7000,
+      "note": "cloths",
+      "id": "2567"
+    },
+    {
+      "date": "2025-08-20",
+      "userId": "b047",
+      "category": "Grocries",
+      "type": "expense",
+      "amount": 300,
+      "note": "cook essential",
+      "id": "a6e6"
+    },
+    {
+      "date": "2025-08-22",
+      "type": "expense",
+      "category": "food",
+      "note": "hotel1",
+      "amount": 200,
+      "userId": "504c",
+      "id": "f3a4"
+    },
+    {
+      "id": "2534",
+      "date": "2025-07-14",
+      "type": "expense",
+      "category": "Food",
+      "note": "hotel",
+      "amount": 500,
+      "userId": "504c"
+    },
+    {
+      "id": "f8ba",
+      "date": "2025-06-11",
+      "type": "expense",
+      "category": "food",
+      "note": "hotel",
+      "amount": 1000,
+      "userId": "504c"
+    },
+    {
+      "id": "857e",
+      "date": "2025-05-14",
+      "type": "expense",
+      "category": "food",
+      "note": "hotel",
+      "amount": 2000,
+      "userId": "504c"
+    }
+  ]
+}

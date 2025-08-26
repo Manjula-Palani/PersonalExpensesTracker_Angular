@@ -1,0 +1,34 @@
+<div class="p-4 max-w-2xl mx-auto">
+  <div class="bg-white p-4 rounded-2xl shadow">
+    <h2 class="text-xl font-semibold mb-4">{{id ? 'Edit' : 'Add'}} Transaction</h2>
+    <form [formGroup]="form" (ngSubmit)="submit()" class="grid md:grid-cols-2 gap-4">
+      <div>
+        <label class="block text-sm">Date
+        <input type="date" formControlName="date" class="mt-1 w-full border rounded-xl p-2"/></label>
+      </div>
+      <div>
+        <label class="block text-sm">Type
+        <select formControlName="type" class="mt-1 w-full border rounded-xl p-2">
+        <option value="expense">Expense</option>
+        <option value="income">Income</option>
+        </select></label>
+      </div>
+      <div>
+        <label class="block text-sm">Category
+        <input formControlName="category" class="mt-1 w-full border rounded-xl p-2"/></label>
+      </div>
+      <div class="md:col-span-2">
+        <label class="block text-sm">Notes
+        <input formControlName="note" class="mt-1 w-full border roundedxl p-2"/></label>
+      </div>
+      <div>
+        <label class="block text-sm">Amount
+        <input type="number" formControlName="amount" step="0.01" class="mt-1 wfull border rounded-xl p-2 text-right"/></label>
+      </div>
+      <div class="md:col-span-2 flex justify-end gap-2">
+        <a routerLink="/transactions" class="px-3 py-2 border roundedxl">Cancel</a>
+        <button class="px-3 py-2 bg-black text-white rounded-xl">Save</button>
+      </div>
+    </form>
+  </div>
+</div>  
